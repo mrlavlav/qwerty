@@ -8,6 +8,7 @@ before_action :authenticate_user!
   def edit
     @user = current_user
   end
+ 
  def index
   @users = User.paginate(page: params[:page])
   end
