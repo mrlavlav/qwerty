@@ -16,11 +16,21 @@ class ApplicationController < ActionController::Base
   def conversation
     @conversation ||= mailbox.conversations.find(params[:id])
   end
+  def show
+    
+  end
+  def edit
+  end
 
   protected
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) << :city
+    devise_parameter_sanitizer.for(:account_update) << :country
+    devise_parameter_sanitizer.for(:account_update) << :about_me
+    devise_parameter_sanitizer.for(:account_update) << :age
+    devise_parameter_sanitizer.for(:account_update) << :gender
   end
 end

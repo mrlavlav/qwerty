@@ -19,6 +19,7 @@ def create
   def show
     @receipts = conversation.receipts_for(current_user)
     conversation.mark_as_read(current_user)
+    
   end
 
     def trash
